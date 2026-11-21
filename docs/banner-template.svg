@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="200" viewBox="0 0 1200 200">
+  <!-- Beam: шаблон баннера профиля. Импортируй в Figma, рисуй арт под слоем guides, перед экспортом слой guides удали. -->
+  <rect width="1200" height="200" fill="#2b2724"/>
+  <g id="guides" font-family="Arial, sans-serif" font-size="15">
+    <rect x="0" y="0" width="600" height="200" fill="#5b8cff" fill-opacity="0.16"/>
+    <text x="20" y="36" fill="#9db8ff">FADE 0–600: арт плавно исчезает → только фон/узор</text>
+    <text x="20" y="58" fill="#9db8ff">под названием и трафиком, на узких карточках обрезается</text>
+    <rect x="600" y="24" width="460" height="152" fill="#3ddc84" fill-opacity="0.18" stroke="#3ddc84" stroke-width="2" stroke-dasharray="8 6"/>
+    <text x="616" y="52" fill="#7ff0b0">SAFE 600–1060 × 24–176</text>
+    <text x="616" y="74" fill="#7ff0b0">герой: маскот, логотип, главный арт</text>
+    <rect x="1060" y="0" width="140" height="200" fill="#ff6b6b" fill-opacity="0.16"/>
+    <text x="1070" y="36" fill="#ff9d9d">UI 1060–1200</text>
+    <text x="1070" y="58" fill="#ff9d9d">кнопки</text>
+    <text x="1070" y="80" fill="#ff9d9d">только фон</text>
+    <rect x="0" y="0" width="1200" height="24" fill="#ffb84d" fill-opacity="0.14"/>
+    <rect x="0" y="176" width="1200" height="24" fill="#ffb84d" fill-opacity="0.14"/>
+    <text x="616" y="194" fill="#ffcf85" font-size="13">24 px — скругления углов</text>
+  </g>
+</svg>

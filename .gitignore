@@ -1,0 +1,17 @@
+build/
+*.aar
+*-sources.jar
+.claude
+.idea
+.vscode
+.vs
+.DS_Store
+
+# Go build / test output
+*.exe
+*.test
+*.out
+coverage.*
+*.log
+*.tmp
+Thumbs.db

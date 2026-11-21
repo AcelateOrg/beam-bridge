@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "name": "MyVPN",
+  "provider": "MyVPN",
+  "url": "https://sub.myvpn.example/abc123",
+  "branding": {
+    "iconUrl": "https://myvpn.example/logo.png",
+    "supportUrl": "https://t.me/myvpn_support"
+  },
+  "links": [
+    "[Основные]",
+    "vless://8b2c3f4e-1a2b-4c3d-9e8f-0a1b2c3d4e5f@de.myvpn.example:443?type=tcp&security=reality&pbk=Xh4sQ0bq9kq7kP9w3cFZpQm1n2b3v4c5x6z7a8s9d0f&sid=6ba85179e30d4fc2&sni=www.google.com&fp=chrome&flow=xtls-rprx-vision#Германия",
+    "vless://8b2c3f4e-1a2b-4c3d-9e8f-0a1b2c3d4e5f@nl.myvpn.example:443?type=tcp&security=reality&pbk=Xh4sQ0bq9kq7kP9w3cFZpQm1n2b3v4c5x6z7a8s9d0f&sid=6ba85179e30d4fc2&sni=www.google.com&fp=chrome&flow=xtls-rprx-vision#Нидерланды",
+    "[Игровые]",
+    "trojan://secret@game.myvpn.example:443?security=tls&sni=game.myvpn.example#Gaming FI"
+  ]
+}
