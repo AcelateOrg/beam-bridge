@@ -25,6 +25,7 @@ import (
 	"beam-bridge/core/platform"
 	"beam-bridge/core/profile"
 	"beam-bridge/core/runner"
+	"beam-bridge/core/target"
 	"beam-bridge/core/types"
 )
 
@@ -149,6 +150,8 @@ func ImportProfile(input string) (string, error) {
 		if err != nil && strings.Contains(input, `"outbounds"`) {
 			p, err = m.ImportRawConfig("", input)
 		}
+	case strings.HasPrefix(strings.ToLower(firstLine(input)), "beam:"):
+		p, err = target.NewResolver(m).Open(firstLine(input))
 	default:
 		p, err = m.ImportFromURL(firstLine(input))
 	}
@@ -250,6 +253,11 @@ func PingNodes(profileID, nodeIDsJSON string, timeoutMs int) (string, error) {
 // PingNodesStream is PingNodes that also reports each result to listener the
 // moment it is measured. The returned JSON still holds every result.
 func PingNodesStream(profileID, nodeIDsJSON string, timeoutMs int, listener PingListener) (string, error) {
+	// Install the protected direct dialer even before the first connection.
+	// A concurrent connect/reconnect must never turn a TCP probe into a TUN handshake.
+	if _, err := runnerService(); err != nil {
+		return "", err
+	}
 	m, err := manager()
 	if err != nil {
 		return "", err

@@ -372,7 +372,7 @@ func (m *Manager) PingCategoryNodes(profileID string, categoryID string, timeout
 func (m *Manager) pingNodes(nodes []types.BeamNode, provider *types.ProviderSettings, timeout time.Duration, useLiveCore bool, observe func(PingResult)) ([]PingResult, error) {
 	core := m.liveCore()
 	var direct coreapi.DirectRoute
-	if core != nil && core.Running() {
+	if core != nil {
 		direct, _ = core.(coreapi.DirectRoute)
 	}
 	settings := m.settingsRepo.Get()

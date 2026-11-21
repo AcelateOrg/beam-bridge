@@ -1036,9 +1036,9 @@ func (s *Service) DialDirect(ctx context.Context, network, address string) (net.
 	}
 	var d net.Dialer
 	s.mu.Lock()
-	if s.stack != nil {
-		d.Control = s.deviceControl
-	}
+	// Keep probes protected during startup and reconnect too, when the
+	// Android VPN interface can exist before the core stack is ready.
+	d.Control = s.deviceControl
 	s.mu.Unlock()
 	return d.DialContext(ctx, network, address)
 }
